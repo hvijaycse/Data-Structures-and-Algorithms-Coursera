@@ -2,8 +2,12 @@
 
 def binary_search(a, x, low, high ):
     # print( low, high)
-    if low >= high :
-        return -1 
+    if low > high :
+        return -1
+    elif low == high:
+        if a[low] == x:
+            return low
+
     # write your code here
     mid = (low + high ) //2
     if a[mid] == x:
@@ -27,4 +31,4 @@ if __name__ == '__main__':
     a = line1[1:]
     for x in line2[1: ]:
         # replace with the call to binary_search when implemented
-        print(binary_search(a, x, 0 , n ), end = ' ')
+        print(binary_search(a, x, 0 , n - 1), end = ' ')

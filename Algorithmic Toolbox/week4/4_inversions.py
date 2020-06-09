@@ -1,17 +1,6 @@
 # Uses python3
 import sys
 
-# def get_number_of_inversions(a, b, left, right):
-#     number_of_inversions = 0
-#     if right - left <= 1:
-#         return number_of_inversions
-#     ave = (left + right) // 2
-#     number_of_inversions += get_number_of_inversions(a, b, left, ave)
-#     number_of_inversions += get_number_of_inversions(a, b, ave, right)
-#     #write your code here
-
-#     return number_of_inversions
-
 def Merge( Left, Right):
     array = []
     l_max = len( Left)
@@ -45,12 +34,11 @@ def get_number_of_inversions( array, start, end , inversion):
     inversion += N_inversion
     return array, inversion
 
-
 def main():
     n = int( input())
     a = list(map(int, input().split()))[: n]
-    array, no_of_inversions = get_number_of_inversions(a, 0, n - 1, 0 )
-    print( array , no_of_inversions)
+    no_of_inversions = get_number_of_inversions(a, 0, n - 1, 0 )[1]
+    print(no_of_inversions)
 
 if __name__ == '__main__':
     main()
